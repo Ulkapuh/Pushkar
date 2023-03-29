@@ -1,0 +1,42 @@
+<!doctype html>
+              <html lang="ru">
+              <head>
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <title>Видос</title>
+<video id="videoPlayer" width="600" height="400">
+    <source src="video.mp4" type="video/mp4">
+</video>
+<div>
+    <button onclick="play()">Play</button>
+    <button onclick="pause()">Pause</button>
+    <button onclick="stop()">Stop</button>
+</div>
+<script>
+    var video;
+var display;
+var value = Math.random()
+
+window.onload = function() {
+	video = document.getElementById("videoPlayer");
+};
+
+function play() {
+    video.play();
+}
+
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+ 
+function pause() {
+    setTimeout(_=>video.pause(), getRandomInt(1000,4000) * 1);
+}
+
+function stop() {
+    video.pause();
+    video.currentTime = 0;
+}
+</script>
+</html>
